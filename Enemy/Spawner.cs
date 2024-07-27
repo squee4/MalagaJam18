@@ -21,8 +21,9 @@ public class Spawner : MonoBehaviour
     }
     void SpawnEnemy()
     {
-        //arround the player position
-        Vector2 spawnPosition = new Vector2(transform.position.x + UnityEngine.Random.Range(-5, 5), transform.position.y + UnityEngine.Random.Range(-5, 5));
+        //arround the player position but with a minimun range
+        Vector2 spawnPosition = new Vector2(transform.position.x + (UnityEngine.Random.Range(5, 10)* (UnityEngine.Random.Range(0,2)*2-1)),
+            transform.position.y + (UnityEngine.Random.Range(5, 10) * (UnityEngine.Random.Range(0, 2)*2 -1 )));
         // Instantiate enemy at spawner position
         Instantiate(enemy, spawnPosition, transform.rotation);
         //los enemigos spawnean con un tag de "Enemy"
